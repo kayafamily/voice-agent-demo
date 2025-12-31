@@ -61,7 +61,7 @@ export function App() {
       client.sendUserMessageContent([
         {
           type: `input_text`,
-          text: `Hello!`,
+          text: `Selam ulu Kağan! Sizinle konuşmak istiyorum.`,
         },
       ]);
 
@@ -145,6 +145,14 @@ export function App() {
 
   return (
     <div className="app-container">
+      <div className="hero-section">
+        <div className="wolf-emblem">𐰺</div>
+        <h1 className="hero-title">İLTERİŞ KAĞAN</h1>
+        <p className="hero-subtitle">II. Göktürk Kağanlığı Kurucusu</p>
+        <p className="hero-quote">"Türk budun yok bolmazun!"</p>
+        <p className="hero-quote-translation">"Türk milleti yok olmasın!"</p>
+      </div>
+
       <div className="status-indicator">
         <div
           className={`status-dot ${
@@ -154,15 +162,19 @@ export function App() {
         <div className="status-text">
           <div className="status-label">
             {errorMessage
-              ? "Error:"
+              ? "Hata:"
               : connectionStatus === "connecting"
-              ? "Connecting to:"
+              ? "Kağan çağrılıyor..."
               : connectionStatus === "connected"
-              ? "Connected to:"
-              : "Failed to connect to:"}
+              ? "Kağan konuşuyor:"
+              : "Kağan sessiz:"}
           </div>
           <div className="status-url">{errorMessage || RELAY_SERVER_URL}</div>
         </div>
+      </div>
+
+      <div className="footer-info">
+        <p>682 - 692 | Ötüken Dağları | Göktürk İmparatorluğu</p>
       </div>
     </div>
   );
